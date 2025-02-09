@@ -1,7 +1,9 @@
-# market/urls.py
+from rest_framework.routers import DefaultRouter
 
-from django.urls import path
+from market.views.user_view import UserViewSet
 
-urlpatterns = [
+router = DefaultRouter()
 
-]
+urlpatterns = []
+router.register(r'api/v1/user', UserViewSet, basename="user")
+urlpatterns += router.urls

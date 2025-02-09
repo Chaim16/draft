@@ -4,14 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/draft/utils/exception_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draft/utils/log_util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draft/utils/response.py" afterDir="false" />
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: ignore文件调整">
+      <change afterPath="$PROJECT_DIR$/draft/utils/public_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/models/user_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/views/serilazer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/views/user_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/middleware/exception_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/middleware/exception_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/draft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draft/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/middleware/exception_middleware.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draft/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/utils/constants_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/utils/constants_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/utils/constants_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/utils/exception_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/utils/exception_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/utils/validate.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/utils/validate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Django Server.draft.executor": "Run",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -65,6 +72,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yqm02\PycharmProjects\draft\market\models" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\market" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\draft" />
     </key>
@@ -77,6 +85,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="draft.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -117,9 +126,22 @@
       <workItem from="1739104667563" duration="901000" />
       <workItem from="1739106964528" duration="3352000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: ignore文件调整">
+      <option name="closed" value="true" />
+      <created>1739113173303</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739113173303</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: ignore文件调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: ignore文件调整" />
   </component>
 </project>

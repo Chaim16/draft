@@ -6,7 +6,7 @@ CREATE TABLE `user` (
     `username` VARCHAR(64) NOT NULL UNIQUE,
     `password` VARCHAR(1024) NOT NULL,
     `nickname` VARCHAR(64) NOT NULL,
-    `gender` INT NOT NULL DEFAULT 0,
+    `gander` INT NOT NULL DEFAULT 0,
     `phone` VARCHAR(32) NOT NULL,
     `is_ban` INT NOT NULL DEFAULT 0,
     `role` VARCHAR(20) NOT NULL,

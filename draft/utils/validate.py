@@ -4,6 +4,7 @@ import json
 import traceback
 
 from functools import wraps
+from marshmallow import Schema, fields, validate
 
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
@@ -97,4 +98,13 @@ def validate_param(schema):
         return wrapper
 
     return decorator
+
+
+class Register(Schema):
+    username = fields.String(validate=[validate.Length(max=64)], required=True)
+    password1 = fields.String(validate=[validate.Length(max=32)], required=True)
+    password2 = fields.String(validate=[validate.Length(max=32)], required=True)
+    nickname = fields.String(validate=[validate.Length(max=64)], required=True)
+    gender = fields.Integer(validate=validate.OneOf([0, 1]), required=True)
+    phone = fields.String(validate=[validate.Length(max=32)], required=True)
 

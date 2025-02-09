@@ -2,7 +2,7 @@ import traceback
 
 from django.middleware.common import MiddlewareMixin
 
-from draft.utils.exception_util import DataExistsException, DataNotExistsException, BusinessException
+from draft.utils.exception_util import DataExistsException, DataNotExistsException, BusinessException, ParamsException
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
 
@@ -24,6 +24,8 @@ class ExceptionMiddleware(MiddlewareMixin):
         elif isinstance(exception, DataNotExistsException):
             message = str(exception)
         elif isinstance(exception, BusinessException):
+            message = str(exception)
+        elif isinstance(exception, ParamsException):
             message = str(exception)
         else:
             message = "请求处理异常"

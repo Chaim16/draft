@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'market',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -141,7 +144,7 @@ log_conf = {
     "level": "DEBUG",
     "format_string": "{time:YYYY:MM:DD:HH:mm:ss} | {thread.name} | {level} | {file.path}:{line} | {message}",
     "log_path": log_path,
-    "common_log_path": os.path.join(log_path, 'decision_engine.log')
+    "common_log_path": os.path.join(log_path, 'draft.log')
 }
 
 logger.remove()
