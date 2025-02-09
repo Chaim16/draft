@@ -23,7 +23,6 @@ class UserViewSet(viewsets.ViewSet):
         tags=['用户管理']
     )
     def register(self, request):
-        """注册功能"""
         serializer = RegisterSerializer(data=request.data)
         if not serializer.is_valid():
             raise ParamsException(str(serializer.errors))
