@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
+
+from loguru import logger
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,12 +34,12 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'market',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'market',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'draft.middleware.exception_middleware.ExceptionMiddleware',
+    'draft.middleware.http_log_middleware.HTTPLogMiddleware',
 ]
 
 ROOT_URLCONF = 'draft.urls'
@@ -129,3 +134,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+log_path = os.path.join(BASE_DIR, "logs")
+log_conf = {
+    "level": "DEBUG",
+    "format_string": "{time:YYYY:MM:DD:HH:mm:ss} | {thread.name} | {level} | {file.path}:{line} | {message}",
+    "log_path": log_path,
+    "common_log_path": os.path.join(log_path, 'decision_engine.log')
+}
+
+logger.remove()
+logger.add(log_conf.get("common_log_path"), format=log_conf.get("format_string"),
+           level=log_conf.get("level"), rotation="00:00", retention="7 days")

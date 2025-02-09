@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/draft.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draft/middleware/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draft/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draft/utils/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/draft/utils/logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/market/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/market/views/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sql/market.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/draft/utils/exception_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/draft/utils/log_util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/draft/utils/response.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/utils/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/middleware/exception_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/utils/constants_util.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -53,7 +52,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "C:/Users/yqm02/PycharmProjects/draft",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -115,6 +114,8 @@
       <workItem from="1739086049833" duration="2921000" />
       <workItem from="1739089017574" duration="1304000" />
       <workItem from="1739090364659" duration="2097000" />
+      <workItem from="1739104667563" duration="901000" />
+      <workItem from="1739106964528" duration="3352000" />
     </task>
     <servers />
   </component>
