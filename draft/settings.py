@@ -11,13 +11,14 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+import sys
+from datetime import timedelta
 
 from loguru import logger
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -29,7 +30,6 @@ SECRET_KEY = 'django-insecure-2sj$xs0m$^usz6b=p0$bgio(0m-ja5--=(%1@2$z2o8x@ia@yb
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -78,24 +78,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'draft.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'draft',               # 数据库名
-        'USER': 'root',                # MySQL 用户名
-        'PASSWORD': '123456',          # MySQL 密码
-        'HOST': '127.0.0.1',           # 数据库地址（本地）
-        'PORT': '3306',                # 端口号
+        'NAME': 'draft',  # 数据库名
+        'USER': 'root',  # MySQL 用户名
+        'PASSWORD': '123456',  # MySQL 密码
+        'HOST': '127.0.0.1',  # 数据库地址（本地）
+        'PORT': '3306',  # 端口号
         'OPTIONS': {
-            'charset': 'utf8mb4',      # 推荐使用 utf8mb4 以支持完整的 Unicode
+            'charset': 'utf8mb4',  # 推荐使用 utf8mb4 以支持完整的 Unicode
         },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -114,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+AUTH_USER_MODEL = "market.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -126,7 +124,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -148,5 +145,20 @@ log_conf = {
 }
 
 logger.remove()
+# 日志输出到控制台
+logger.add(sys.stdout, format=log_conf.get("format_string"), level="DEBUG")
 logger.add(log_conf.get("common_log_path"), format=log_conf.get("format_string"),
            level=log_conf.get("level"), rotation="00:00", retention="7 days")
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),  # 设置 JWT 访问 token 的过期时间
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),  # 设置刷新 token 的过期时间
+    'ROTATE_REFRESH_TOKENS': False,
+    'BLACKLIST_AFTER_ROTATION': True,
+}

@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from market.views.user_view import UserViewSet
+from market.view.user_view import UserViewSet
 
 router = DefaultRouter()
 

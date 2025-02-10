@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 用户注册，集成swagger">
-      <change beforePath="$PROJECT_DIR$/market/views/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/views/serilazer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/views/user_view.py" afterDir="false" />
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 用户注册">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/models/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/views/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/serilazer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/user_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,27 +51,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.draft.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "C:/Users/yqm02/PycharmProjects/draft",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.draft.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yqm02/PycharmProjects/draft&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\yqm02\PycharmProjects\draft\market\models" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\market" />
+      <recent name="C:\Users\yqm02\PycharmProjects\draft\market\models" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\draft" />
     </key>
   </component>
@@ -114,6 +123,8 @@
       <workItem from="1739090364659" duration="2097000" />
       <workItem from="1739104667563" duration="901000" />
       <workItem from="1739106964528" duration="3352000" />
+      <workItem from="1739194441594" duration="7234000" />
+      <workItem from="1739204639624" duration="2461000" />
     </task>
     <task id="LOCAL-00001" summary="feat: ignore文件调整">
       <option name="closed" value="true" />
@@ -131,7 +142,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739121342791</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: 用户注册，集成swagger">
+      <option name="closed" value="true" />
+      <created>1739121514901</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739121514901</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: 用户注册">
+      <option name="closed" value="true" />
+      <created>1739121676803</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739121676803</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: ignore文件调整" />
     <MESSAGE value="feat: 用户注册，集成swagger" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 用户注册，集成swagger" />
+    <MESSAGE value="feat: 用户注册" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 用户注册" />
   </component>
 </project>

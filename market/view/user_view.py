@@ -8,8 +8,8 @@ from rest_framework.decorators import action
 from draft.utils.exception_util import BusinessException, ParamsException
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
-from market.models.user_model import UserModel
-from market.views.serilazer import RegisterSerializer
+from market.service.user_model import UserModel
+from market.view.serilazer import RegisterSerializer
 
 logger = get_logger("user")
 
@@ -40,3 +40,4 @@ class UserViewSet(viewsets.ViewSet):
         user_model = UserModel()
         user_model.register(username, password1, nickname, gander, phone)
         return setResult()
+
