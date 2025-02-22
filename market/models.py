@@ -67,3 +67,13 @@ class Browse(models.Model):
     class Meta:
         db_table = 'browse'
 
+
+class Crawler(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    title = models.CharField(max_length=64)
+    description = models.CharField(max_length=1024)
+    image_path = models.CharField(max_length=2048)
+
+    class Meta:
+        db_table = 'crawler'
+

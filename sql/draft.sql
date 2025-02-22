@@ -208,4 +208,27 @@ CREATE TABLE `user_user_permissions`  (
   CONSTRAINT `user_user_permissions_user_id_ed4a47ea_fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
+
+DROP TABLE IF EXISTS `crawler`;
+CREATE TABLE `crawler`  (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `title` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `description` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `image_path` varchar(2048) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
 SET FOREIGN_KEY_CHECKS = 1;
+
+
+insert into draft.crawler(`title`, `description`, `image_path`) values
+('创意设计作品', '探索无限设计可能', 'image_1.jpg'),
+('数字艺术展览', '前沿数字艺术体验', 'image_2.jpg'),
+('设计师工作室', '专业创作空间', 'image_3.jpg'),
+('现代艺术风采', '融合科技与艺术的视界', 'image_4.jpg'),
+('创意先锋', '打破常规，重塑美学', 'image_5.jpg'),
+('未来设计趋势', '引领设计的无限可能', 'image_6.jpg'),
+('艺术家视野', '灵感与创意的交汇点', 'image_7.jpg'),
+('设计思维空间', '激发灵感，激活创意', 'image_8.jpg'),
+('数字艺术空间', '探索未来的视觉语言', 'image_9.jpg'),
+('创意灵感汇', '点燃创作的火花', 'image_10.jpg');

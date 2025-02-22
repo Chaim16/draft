@@ -11,3 +11,7 @@ class RegisterSerializer(serializers.Serializer):
     gender = serializers.ChoiceField(choices=[(1, "男"), (0, "女")], help_text="1男，0女")
     phone = serializers.CharField(max_length=32, required=True, help_text="手机号")
     nickname = serializers.CharField(max_length=64, required=True, help_text="昵称")
+
+
+class CrawlerSerializer(serializers.Serializer):
+    number = serializers.IntegerField(required=True, help_text="数量")
