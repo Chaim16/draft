@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 用户注册">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: jwt">
+      <change afterPath="$PROJECT_DIR$/draft/middleware/cross_domain_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/middleware/http_log_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/middleware/http_log_middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/draft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/draft/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/models/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/user_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/views/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/serilazer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/views/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/service/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/view/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/serilazer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/view/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/user_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +54,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yqm02/PycharmProjects/draft&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yqm02/PycharmProjects/draft/sql&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -69,6 +65,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yqm02\PycharmProjects\draft\sql" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\yqm02\PycharmProjects\draft\market" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\market\models" />
@@ -86,6 +85,7 @@
         <env name="DJANGO_SETTINGS_MODULE" value="draft.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="draft" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -124,7 +124,15 @@
       <workItem from="1739104667563" duration="901000" />
       <workItem from="1739106964528" duration="3352000" />
       <workItem from="1739194441594" duration="7234000" />
-      <workItem from="1739204639624" duration="2461000" />
+      <workItem from="1739204639624" duration="2785000" />
+      <workItem from="1739248936072" duration="483000" />
+      <workItem from="1739249430296" duration="4448000" />
+      <workItem from="1739698485538" duration="1837000" />
+      <workItem from="1739888511437" duration="2319000" />
+      <workItem from="1740061615607" duration="1702000" />
+      <workItem from="1740099517015" duration="4000" />
+      <workItem from="1740151929867" duration="1591000" />
+      <workItem from="1740197058526" duration="9536000" />
     </task>
     <task id="LOCAL-00001" summary="feat: ignore文件调整">
       <option name="closed" value="true" />
@@ -158,7 +166,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739121676803</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: jwt">
+      <option name="closed" value="true" />
+      <created>1739207270238</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739207270238</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: jwt">
+      <option name="closed" value="true" />
+      <created>1739207401032</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739207401032</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,6 +192,7 @@
     <MESSAGE value="feat: ignore文件调整" />
     <MESSAGE value="feat: 用户注册，集成swagger" />
     <MESSAGE value="feat: 用户注册" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 用户注册" />
+    <MESSAGE value="feat: jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: jwt" />
   </component>
 </project>

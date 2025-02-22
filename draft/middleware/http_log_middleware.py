@@ -19,6 +19,8 @@ class HTTPLogMiddleware(MiddlewareMixin):
             params = TransCoding().transcoding_dict(dict(request.GET.items()))
         elif request.method == "POST":
             params = json.loads(request.body)
+        elif request.method == "OPTIONS":
+            return
         else:
             return setResult({}, "不支持的请求方法", 1)
         msg = "access with request_id:{}, method:{}, path:{}, params:{}".format(
@@ -28,7 +30,7 @@ class HTTPLogMiddleware(MiddlewareMixin):
 
     def process_response(self, request, response):
         """预处理响应，记录日志"""
-        request_id = request.request_id
+        request_id = "123"
         response_data = response.content[:200]  # 只记录前200个字符
         msg = "response request:{}, with data:{}".format(request_id, response_data)
         logger.info(msg)

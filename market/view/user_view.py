@@ -28,16 +28,31 @@ class UserViewSet(viewsets.ViewSet):
             raise ParamsException(str(serializer.errors))
         params = json.loads(request.body)
         username = params.get('username')
-        password1 = params.get('password1')
-        password2 = params.get('password2')
+        password = params.get('password')
+        confirm_password = params.get('confirm_password')
         gander = params.get('gander')
         phone = params.get('phone')
         nickname = params.get('nickname')
 
-        if password1 != password2:
+        if password != confirm_password:
             raise BusinessException("两次密码不一致")
 
         user_model = UserModel()
-        user_model.register(username, password1, nickname, gander, phone)
+        user_model.register(username, password, nickname, gander, phone)
         return setResult()
+
+    @action(methods=['GET'], detail=False)
+    @swagger_auto_schema(
+        operation_description="whoami",
+        tags=["用户管理"],
+    )
+    def whoami(self, request):
+        user_model = UserModel()
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+        logger.info("=======user:{}".format(user))
+        logger.info("=======user:{}".format(user.username))
+        data = user_model.whoami(user.username)
+        return setResult(data)
 

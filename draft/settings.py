@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'draft.middleware.cross_domain_middleware.CrossDomainMiddleware',
     'draft.middleware.exception_middleware.ExceptionMiddleware',
     'draft.middleware.http_log_middleware.HTTPLogMiddleware',
 ]

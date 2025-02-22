@@ -28,3 +28,14 @@ class UserModel(object):
         User.objects.create_user(**add_params)
         logger.info("注册用户成功：{}".format(username))
 
+    def whoami(self, username):
+        # 判断用户是否存在
+        if not User.objects.filter(username=username).exists():
+            raise BusinessException("用户名{}不存在".format(username))
+
+        user = User.objects.get(username=username)
+        return {
+            "username": user.username,
+            "role": user.role,
+        }
+
