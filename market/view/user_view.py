@@ -51,8 +51,6 @@ class UserViewSet(viewsets.ViewSet):
         user = request.user
         if not user.is_authenticated:
             return setResult({}, "用户未登录", 1)
-        logger.info("=======user:{}".format(user))
-        logger.info("=======user:{}".format(user.username))
         data = user_model.whoami(user.username)
         return setResult(data)
 

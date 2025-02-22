@@ -163,3 +163,27 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
 }
+
+image_dir = "D://draft_image" if "win" in sys.platform else "/opt/draft_image"
+if not os.path.exists(image_dir):
+    os.makedirs(image_dir)
+
+home_image_dir = os.path.join(BASE_DIR, "store/images/home/")
+if not os.path.exists(home_image_dir):
+    os.makedirs(home_image_dir)
+
+design_images_dir = os.path.join(image_dir, "design/")
+if not os.path.exists(design_images_dir):
+    os.makedirs(design_images_dir)
+
+STATICFILES_DIRS = [
+    home_image_dir,
+    design_images_dir
+]
+
+static_root_path = os.path.join(image_dir, 'staticfiles')
+if not os.path.exists(static_root_path):
+    os.makedirs(static_root_path)
+
+STATIC_URL = '/static/'
+STATIC_ROOT = static_root_path
