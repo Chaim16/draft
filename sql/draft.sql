@@ -218,6 +218,19 @@ CREATE TABLE `crawler`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
+
+DROP TABLE IF EXISTS `designer_application_record`;
+CREATE TABLE `designer_application_record` (
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY,   -- 主键，自动递增
+  `user_id` BIGINT NOT NULL,                -- 用户 ID
+  `reason` VARCHAR(256) NOT NULL,           -- 申请原因
+  `status` VARCHAR(20) NOT NULL,            -- 申请状态
+  `approval_opinions` VARCHAR(256),         -- 审批意见
+  `approval_time` BIGINT,                   -- 申请时间
+  `create_time` BIGINT NOT NULL             -- 创建时间
+);
+
+
 SET FOREIGN_KEY_CHECKS = 1;
 
 

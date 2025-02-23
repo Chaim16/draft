@@ -9,7 +9,13 @@ class Danger(Enum):
 
 class Role(Enum):
 
-    general = "general"
-    designer = "designer"
-    administrator = "administrator"
+    GENERAL = "general"
+    DESIGNER = "designer"
+    ADMINISTRATOR = "administrator"
 
+
+class DesignerApplicationStatus(Enum):
+
+    WAIT_APPROVAL = "wait_approval"
+    PASS = "pass"
+    REFUSE = "refuse"

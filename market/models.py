@@ -77,3 +77,16 @@ class Crawler(models.Model):
     class Meta:
         db_table = 'crawler'
 
+
+class DesignerApplicationRecord(models.Model):
+
+    id = models.BigAutoField(primary_key=True)
+    user_id = models.BigIntegerField()
+    reason = models.CharField(max_length=256)
+    status = models.CharField(max_length=20)
+    approval_opinions = models.CharField(max_length=256)
+    approval_time = models.BigIntegerField()
+    create_time = models.BigIntegerField()
+
+    class Meta:
+        db_table = 'designer_application_record'
