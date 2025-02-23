@@ -26,5 +26,6 @@ class ApplyAsDesignerSerializer(serializers.Serializer):
     reason = serializers.CharField(max_length=512, required=True, help_text="申请理由")
 
 
-class CrawlerSerializer(serializers.Serializer):
-    number = serializers.IntegerField(required=True, help_text="数量")
+class RechargeSerializer(serializers.Serializer):
+
+    amount = serializers.FloatField(required=True, help_text="充值金额")

@@ -16,10 +16,14 @@ class HTTPLogMiddleware(MiddlewareMixin):
         """预处理请求，记录日志"""
         request_id = str(uuid.uuid4())
         request.request_id = request_id
+        params = ""
         if request.method == "GET":
             params = TransCoding().transcoding_dict(dict(request.GET.items()))
         elif request.method == "POST":
-            params = json.loads(request.body)
+            try:
+                params = json.loads(request.body)
+            except Exception as e:
+                params = request.POST.dict()
         elif request.method == "OPTIONS":
             return
         else:

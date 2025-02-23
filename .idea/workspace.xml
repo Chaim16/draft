@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 首页轮播图">
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 编辑个人信息，申请设计师">
+      <change afterPath="$PROJECT_DIR$/conf/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/alipay_app_private_key.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/alipay_public_key.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/service/alipay_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/view/alipay_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/middleware/http_log_middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/middleware/http_log_middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/draft/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/draft/utils/constants_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/draft/utils/constants_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/service/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/view/home_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/home_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/view/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/serilazer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/view/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/user_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/draft.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/draft.sql" afterDir="false" />
@@ -60,26 +70,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.draft.executor&quot;: &quot;Run&quot;,
-    &quot;Python.crawler_util.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yqm02/PycharmProjects/draft/store/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.draft.executor": "Run",
+    "Python.alipay_model.executor": "Run",
+    "Python.alipay_model_dev.executor": "Run",
+    "Python.crawler_util.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/yqm02/PycharmProjects/draft/market/service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yqm02\PycharmProjects\draft\market\service" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\store\images" />
       <recent name="C:\Users\yqm02\PycharmProjects\draft\sql" />
     </key>
@@ -90,7 +103,53 @@
       <recent name="C:\Users\yqm02\PycharmProjects\draft\draft" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.draft">
+  <component name="RunManager" selected="Python.alipay_model">
+    <configuration name="alipay_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="draft" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/market/service" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/market/service/alipay_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="alipay_model_dev" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="draft" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/market/service" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/market/service/alipay_model_dev.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="crawler_util" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="draft" />
       <option name="ENV_FILES" value="" />
@@ -142,10 +201,14 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.draft" />
+      <item itemvalue="Python.alipay_model" />
+      <item itemvalue="Python.alipay_model_dev" />
       <item itemvalue="Python.crawler_util" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.alipay_model" />
+        <item itemvalue="Python.alipay_model_dev" />
         <item itemvalue="Python.crawler_util" />
       </list>
     </recent_temporary>
@@ -181,7 +244,8 @@
       <workItem from="1740099517015" duration="4000" />
       <workItem from="1740151929867" duration="1591000" />
       <workItem from="1740197058526" duration="19145000" />
-      <workItem from="1740280029844" duration="7448000" />
+      <workItem from="1740280029844" duration="8995000" />
+      <workItem from="1740305843326" duration="15875000" />
     </task>
     <task id="LOCAL-00001" summary="feat: ignore文件调整">
       <option name="closed" value="true" />
@@ -255,7 +319,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740244405765</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: 编辑个人信息，申请设计师">
+      <option name="closed" value="true" />
+      <created>1740294954162</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740294954162</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,9 +340,12 @@
     <MESSAGE value="feat: jwt" />
     <MESSAGE value="feat: 注册登录" />
     <MESSAGE value="feat: 首页轮播图" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 首页轮播图" />
+    <MESSAGE value="feat: 编辑个人信息，申请设计师" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 编辑个人信息，申请设计师" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/draft$crawler_util.coverage" NAME="crawler_util Coverage Results" MODIFIED="1740280059996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/draft/utils" />
+    <SUITE FILE_PATH="coverage/draft$alipay_model_dev.coverage" NAME="alipay_model_dev Coverage Results" MODIFIED="1740316579870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/market/service" />
+    <SUITE FILE_PATH="coverage/draft$alipay_model.coverage" NAME="alipay_model Coverage Results" MODIFIED="1740318478117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/market/service" />
   </component>
 </project>

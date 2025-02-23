@@ -5,12 +5,10 @@ from drf_yasg.utils import swagger_auto_schema
 from rest_framework import viewsets, permissions
 from rest_framework.decorators import action
 
-from draft import settings
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
 from draft.utils.validate import TransCoding
 from market.service.home_model import HomeModel
-from market.view.serilazer import CrawlerSerializer
 
 logger = get_logger("home")
 

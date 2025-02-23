@@ -9,8 +9,10 @@ from draft.utils.constants_util import Role
 from draft.utils.exception_util import BusinessException, ParamsException
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
+from market.service.alipay_model import AlipayModel
 from market.service.user_model import UserModel
-from market.view.serilazer import RegisterSerializer, UserModifySerializer, ApplyAsDesignerSerializer
+from market.view.serilazer import RegisterSerializer, UserModifySerializer, ApplyAsDesignerSerializer, \
+    RechargeSerializer
 
 logger = get_logger("user")
 
@@ -144,3 +146,25 @@ class UserViewSet(viewsets.ViewSet):
         except Exception as e:
             logger.error("申请成为设计师失败：{}".format(traceback.format_exc()))
             raise BusinessException("申请成为设计师失败")
+
+    @action(methods=['POST'], detail=False)
+    @swagger_auto_schema(
+        operation_description="充值",
+        request_body=RechargeSerializer,
+        tags=['用户管理']
+    )
+    def recharge(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+        params = json.loads(request.body)
+        amount = params.get('amount')
+        username = user.username
+
+        user_model = UserModel()
+        try:
+            data = user_model.recharge(username, amount)
+            return setResult(data)
+        except Exception as e:
+            logger.error("创建充值订单失败：{}".format(traceback.format_exc()))
+            raise BusinessException("创建充值订单失败")

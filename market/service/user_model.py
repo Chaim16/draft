@@ -1,12 +1,15 @@
 import time
+import traceback
+import uuid
 from turtledemo.bytedesign import Designer
 
 from django.forms import model_to_dict
 
-from draft.utils.constants_util import Role, DesignerApplicationStatus
+from draft.utils.constants_util import Role, DesignerApplicationStatus, WalletOrderStatus
 from draft.utils.exception_util import BusinessException
 from draft.utils.log_util import get_logger
-from market.models import User, DesignerApplicationRecord
+from market.models import User, DesignerApplicationRecord, WalletOrder
+from market.service.alipay_model import AlipayModel
 
 logger = get_logger("user")
 
@@ -88,4 +91,25 @@ class UserModel(object):
         record = DesignerApplicationRecord.objects.create(**params)
         return {"id": record.id}
 
+    def recharge(self, username, amount):
+        user_id = self.id_by_username(username)
+        order_uuid = str(uuid.uuid4())
+        params = {
+            "order_uuid": order_uuid,
+            "status": WalletOrderStatus.PENDING.value,
+            "user_id": user_id,
+            "amount": amount,
+            "create_time": int(time.time()),
+        }
+        try:
+            logger.info("创建充值订单：{}".format(params))
+            WalletOrder.objects.create(**params)
+            logger.info("充值订单创建成功")
+
+            alipay_model = AlipayModel()
+            url = alipay_model.alipay(order_uuid, amount, "余额充值")
+            return {"url": url}
+        except Exception as e:
+            logger.error("创建充值订单失败：{}".format(traceback.format_exc()))
+            raise BusinessException("创建充值订单失败")
 

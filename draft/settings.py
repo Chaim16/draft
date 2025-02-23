@@ -187,3 +187,5 @@ if not os.path.exists(static_root_path):
 
 STATIC_URL = '/static/'
 STATIC_ROOT = static_root_path
+
+CONFIG_PATH = os.path.join(BASE_DIR, "conf", "application.yaml")

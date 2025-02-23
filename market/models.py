@@ -18,10 +18,27 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+class WalletOrder(models.Model):
+    """钱包充值订单表"""
+
+    id = models.BigAutoField(primary_key=True)
+    order_uuid = models.CharField(max_length=36)
+    user_id = models.BigIntegerField()
+    status = models.CharField(max_length=20)
+    amount = models.FloatField()
+    seller_id = models.CharField(max_length=64)
+    buyer_id = models.CharField(max_length=64)
+    create_time = models.BigIntegerField()
+    received_time = models.BigIntegerField()
+
+    class Meta:
+        db_table = 'wallet_order'
+
 
 class Order(models.Model):
 
     id = models.BigAutoField(primary_key=True)
+    order_uuid = models.CharField(max_length=36)
     user_id = models.BigIntegerField()
     amount = models.FloatField()
     status = models.CharField(max_length=20)

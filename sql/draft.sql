@@ -230,6 +230,18 @@ CREATE TABLE `designer_application_record` (
   `create_time` BIGINT NOT NULL             -- 创建时间
 );
 
+CREATE TABLE `wallet_order` (
+  `id` BIGINT AUTO_INCREMENT PRIMARY KEY,          -- 主键，自动递增
+  `order_uuid` VARCHAR(36) NOT NULL,               -- 订单UUID，最大长度36个字符
+  `user_id` BIGINT NOT NULL,                       -- 用户ID
+  `status` VARCHAR(20),                            -- 订单状态
+  `amount` FLOAT NOT NULL,                         -- 金额，使用FLOAT类型
+  `seller_id` VARCHAR(64),                         -- 卖家ID，最大长度64个字符
+  `buyer_id` VARCHAR(64),                          -- 买家ID，最大长度64个字符
+  `create_time` BIGINT,                            -- 创建时间，使用BIGINT类型，通常存储时间戳
+  `received_time` BIGINT                           -- 收到时间，使用BIGINT类型，通常存储时间戳
+);
+
 
 SET FOREIGN_KEY_CHECKS = 1;
 
