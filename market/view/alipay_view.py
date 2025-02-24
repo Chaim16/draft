@@ -7,7 +7,7 @@ from rest_framework.decorators import action
 from draft.utils.exception_util import BusinessException
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
-from market.service.alipay_model import alipay, AlipayModel
+from market.service.alipay_model import AlipayModel
 
 logger = get_logger("alipay")
 

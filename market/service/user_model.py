@@ -2,7 +2,9 @@ import time
 import traceback
 import uuid
 from turtledemo.bytedesign import Designer
+from urllib.parse import uses_relative
 
+from django.core.paginator import Paginator
 from django.forms import model_to_dict
 
 from draft.utils.constants_util import Role, DesignerApplicationStatus, WalletOrderStatus
@@ -112,4 +114,66 @@ class UserModel(object):
         except Exception as e:
             logger.error("创建充值订单失败：{}".format(traceback.format_exc()))
             raise BusinessException("创建充值订单失败")
+
+    def apply_designer_list(self, page, size, **kwargs):
+        record_list = DesignerApplicationRecord.objects.filter().order_by("-id")
+        if kwargs.get("status"):
+            record_list = record_list.filter(status=kwargs.get("status"))
+        if kwargs.get("user_id"):
+            record_list = record_list.filter(user_id=kwargs.get("user_id"))
+        count = record_list.count()
+        paginator = Paginator(record_list, size)
+        record_list = paginator.get_page(page)
+
+        # 获取用户列表
+        res = self.user_list(1, 9999)
+        user_list = res.get("list", [])
+        user_map = {}
+        for user in user_list:
+            user_map[str(user.get("id"))] = user.get("username")
+
+        data_list = []
+        for item in record_list:
+            info = model_to_dict(item)
+            username = user_map.get(str(info.get("user_id")))
+            info["username"] = username
+            data_list.append(info)
+        return {"count": count, "list": data_list}
+
+    def approve_designer_application(self, record_id, status, approval_opinions):
+        record = DesignerApplicationRecord.objects.get(id=record_id)
+        record.status = status
+        record.approval_opinions = approval_opinions
+        record.approval_time = int(time.time())
+        record.save()
+        logger.info("更新设计师申请记录, record_id: {}, status: {}, approval_opinions: {}".format(
+            record_id, status, approval_opinions
+        ))
+
+    def user_list(self, page, size,**kwargs):
+        user_list = User.objects.all().order_by("-id")
+        if kwargs.get("username"):
+            user_list = user_list.filter(username=kwargs.get("username"))
+        if kwargs.get("gender") is not None:
+            user_list = user_list.filter(gender=kwargs.get("gender"))
+        if kwargs.get("phone"):
+            user_list = user_list.filter(phone=kwargs.get("phone"))
+        if kwargs.get("role"):
+            user_list = user_list.filter(role=kwargs.get("role"))
+        count = user_list.count()
+        paginator = Paginator(user_list, size)
+        user_list = paginator.get_page(page)
+        data_list = []
+        for item in user_list:
+            data_list.append({
+                "id": item.id,
+                "username": item.username,
+                "nickname": item.nickname,
+                "gender": item.gender,
+                "phone": item.phone,
+                "role": item.role,
+                "balance": item.balance,
+            })
+        return {"count": count, "list": data_list}
+
 

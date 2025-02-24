@@ -9,10 +9,11 @@ from draft.utils.constants_util import Role
 from draft.utils.exception_util import BusinessException, ParamsException
 from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
+from draft.utils.validate import TransCoding
 from market.service.alipay_model import AlipayModel
 from market.service.user_model import UserModel
 from market.view.serilazer import RegisterSerializer, UserModifySerializer, ApplyAsDesignerSerializer, \
-    RechargeSerializer
+    RechargeSerializer, ApproveDesignerApplicationSerializer
 
 logger = get_logger("user")
 
@@ -168,3 +169,55 @@ class UserViewSet(viewsets.ViewSet):
         except Exception as e:
             logger.error("创建充值订单失败：{}".format(traceback.format_exc()))
             raise BusinessException("创建充值订单失败")
+
+    @action(methods=['GET'], detail=False)
+    @swagger_auto_schema(
+        operation_description="获取申请设计师列表",
+        tags=["用户管理"],
+    )
+    def apply_designer_list(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = TransCoding().transcoding_dict(dict(request.GET.items()))
+        page = int(params.get('page', 1))
+        size = int(params.get('size', 10))
+        user_model = UserModel()
+        try:
+            username = user.username
+            user_dict = user_model.detail(username)
+            if user_dict.get('role') != Role.ADMINISTRATOR.value:
+                raise BusinessException("权限不足")
+            data = user_model.apply_designer_list(page, size)
+            return setResult(data)
+        except Exception as e:
+            logger.error("获取申请设计师列表失败：{}".format(traceback.format_exc()))
+            raise BusinessException("获取申请设计师列表失败")
+
+    @action(methods=['POST'], detail=False)
+    @swagger_auto_schema(
+        operation_description="充值",
+        request_body=ApproveDesignerApplicationSerializer,
+        tags=['用户管理']
+    )
+    def approve_designer_application(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = json.loads(request.body)
+        record_id = params.get('record_id')
+        status = params.get('status')
+        approval_opinions = params.get('approval_opinions')
+        user_model = UserModel()
+        try:
+            username = user.username
+            user_dict = user_model.detail(username)
+            if user_dict.get('role') != Role.ADMINISTRATOR.value:
+                raise BusinessException("权限不足")
+            user_model.approve_designer_application(record_id, status, approval_opinions)
+            return setResult()
+        except Exception as e:
+            logger.error("审批设计师申请失败：{}".format(traceback.format_exc()))
+            raise BusinessException("审批设计师申请失败")

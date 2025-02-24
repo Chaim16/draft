@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from draft.utils.constants_util import DesignerApplicationStatus
 from market.models import User
 
 
@@ -29,3 +30,13 @@ class ApplyAsDesignerSerializer(serializers.Serializer):
 class RechargeSerializer(serializers.Serializer):
 
     amount = serializers.FloatField(required=True, help_text="充值金额")
+
+
+class ApproveDesignerApplicationSerializer(serializers.Serializer):
+
+    status = serializers.ChoiceField(choices=[
+        (DesignerApplicationStatus.PASS.value, "通过"),
+        (DesignerApplicationStatus.REFUSE.value, "拒绝")
+    ], required=True)
+    approval_opinions = serializers.CharField(max_length=512, required=False)
+    record_id = serializers.IntegerField(required=True)
