@@ -52,6 +52,8 @@ class DraftModel(object):
             draft_list = draft_list.filter(category_id=kwargs.get("category_id"))
         if kwargs.get("designer_id"):
             draft_list = draft_list.filter(designer_id=kwargs.get("designer_id"))
+        if kwargs.get("title"):
+            draft_list = draft_list.filter(title__icontains=kwargs.get("title"))
         count = draft_list.count()
         paginator = Paginator(draft_list, size)
         draft_list = paginator.get_page(page)

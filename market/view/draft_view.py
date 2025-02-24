@@ -62,11 +62,12 @@ class DraftViewSet(viewsets.ViewSet):
             return setResult({}, "用户未登录", 1)
 
         params = TransCoding().transcoding_dict(dict(request.GET.items()))
+        title = params.get("title", "")
         page = int(params.get('page', 1))
         size = int(params.get('size', 10))
         draft_model = DraftModel()
         try:
-            data = draft_model.draft_list(page, size)
+            data = draft_model.draft_list(page, size, title=title)
             return setResult(data)
         except Exception as e:
             logger.error("获取画稿列表失败：{}".format(traceback.format_exc()))
