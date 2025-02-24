@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 审批设计师">
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 用户管理">
+      <change afterPath="$PROJECT_DIR$/market/service/draft_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/view/draft_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/view/user_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/user_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/view/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/serilazer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +234,7 @@
       <workItem from="1740197058526" duration="19145000" />
       <workItem from="1740280029844" duration="8995000" />
       <workItem from="1740305843326" duration="17142000" />
-      <workItem from="1740363402614" duration="10979000" />
+      <workItem from="1740363402614" duration="14836000" />
     </task>
     <task id="LOCAL-00001" summary="feat: ignore文件调整">
       <option name="closed" value="true" />
@@ -329,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740381337642</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: 用户管理">
+      <option name="closed" value="true" />
+      <created>1740382713104</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740382713104</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +356,8 @@
     <MESSAGE value="feat: 编辑个人信息，申请设计师" />
     <MESSAGE value="feat: 充值，对接支付宝" />
     <MESSAGE value="feat: 审批设计师" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 审批设计师" />
+    <MESSAGE value="feat: 用户管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 用户管理" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/draft$crawler_util.coverage" NAME="crawler_util Coverage Results" MODIFIED="1740280059996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/draft/utils" />

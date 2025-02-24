@@ -164,7 +164,7 @@ SIMPLE_JWT = {
     'BLACKLIST_AFTER_ROTATION': True,
 }
 
-image_dir = "D://draft_image" if "win" in sys.platform else "/opt/draft_image"
+image_dir = "D:\draft_image" if "win" in sys.platform else "/opt/draft_image"
 if not os.path.exists(image_dir):
     os.makedirs(image_dir)
 

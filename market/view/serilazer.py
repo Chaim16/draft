@@ -40,3 +40,13 @@ class ApproveDesignerApplicationSerializer(serializers.Serializer):
     ], required=True)
     approval_opinions = serializers.CharField(max_length=512, required=False)
     record_id = serializers.IntegerField(required=True)
+
+
+class PublishDraftSerializer(serializers.Serializer):
+
+    title = serializers.CharField(max_length=512, required=False)
+    description = serializers.CharField(max_length=512, required=False)
+    image = serializers.FileField(required=True)
+    price = serializers.FloatField(required=True)
+    category_id = serializers.IntegerField(required=True)
+
