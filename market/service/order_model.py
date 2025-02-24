@@ -90,8 +90,6 @@ class OrderModel(object):
         # 查询买方详情
         user_id = order.user_id
         user = User.objects.get(id=user_id)
-        logger.info("user:{}".format(user.username))
-
         # 如果买方的余额小于画稿的价格，则交易失败
         if user.balance < draft.price:
             raise BusinessException("余额不足")
@@ -109,4 +107,29 @@ class OrderModel(object):
         order.status = OrderStatus.PAID.value
         order.save()
 
+    def return_order(self, order_id):
+        order = Order.objects.get(id=order_id)
+        # 查询画稿详情
+        draft_id = order.draft_id
+        draft = Draft.objects.get(id=draft_id)
 
+        # 查询设计师详情
+        designer_id = draft.designer_id
+        designer = User.objects.get(id=designer_id)
+        # 如果设计师的余额小于画稿的价格，则退回失败
+        if designer.balance < draft.price:
+            raise BusinessException("余额不足")
+
+        designer.balance -= draft.price
+        designer.save()
+
+        # 查询买方详情，，并将amount的金额买方的余额中
+        user_id = order.user_id
+        user = User.objects.get(id=user_id)
+
+        user.balance += draft.price
+        user.save()
+
+        # 修改订单状态为“待支付”
+        order.status = OrderStatus.PENDING.value
+        order.save()

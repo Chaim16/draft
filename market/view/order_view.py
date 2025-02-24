@@ -83,3 +83,24 @@ class OrderViewSet(viewsets.ViewSet):
             logger.error("支付失败：{}".format(traceback.format_exc()))
             raise BusinessException("支付失败")
 
+    @action(methods=['POST'], detail=False)
+    @swagger_auto_schema(
+        operation_description="退回",
+        request_body=CreateOrderSerializer,
+        tags=["订单管理"],
+    )
+    def return_order(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = json.loads(request.body)
+        order_id = params.get("order_id", "")
+        order_model = OrderModel()
+        try:
+            order_model.return_order(order_id)
+            return setResult()
+        except Exception as e:
+            logger.error("退回失败：{}".format(traceback.format_exc()))
+            raise BusinessException("退回失败")
+
