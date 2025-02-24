@@ -149,6 +149,7 @@ class UserModel(object):
         logger.info("更新设计师申请记录, record_id: {}, status: {}, approval_opinions: {}".format(
             record_id, status, approval_opinions
         ))
+        User.objects.filter(id=record.user_id).update(role=Role.DESIGNER.value)
 
     def user_list(self, page, size,**kwargs):
         user_list = User.objects.all().order_by("-id")

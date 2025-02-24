@@ -221,3 +221,30 @@ class UserViewSet(viewsets.ViewSet):
         except Exception as e:
             logger.error("审批设计师申请失败：{}".format(traceback.format_exc()))
             raise BusinessException("审批设计师申请失败")
+
+    @action(methods=['GET'], detail=False)
+    @swagger_auto_schema(
+        operation_description="用户列表",
+        request_body=ApproveDesignerApplicationSerializer,
+        tags=['用户管理']
+    )
+    def user_list(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = TransCoding().transcoding_dict(dict(request.GET.items()))
+        page = int(params.get('page', 1))
+        size = int(params.get('size', 10))
+        user_model = UserModel()
+        try:
+            username = user.username
+            user_dict = user_model.detail(username)
+            if user_dict.get('role') != Role.ADMINISTRATOR.value:
+                raise BusinessException("权限不足")
+            data = user_model.user_list(page, size)
+            return setResult(data)
+        except Exception as e:
+            logger.error("获取用户列表失败：{}".format(traceback.format_exc()))
+            raise BusinessException("获取用户列表失败")
+
