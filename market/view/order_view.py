@@ -56,7 +56,7 @@ class OrderViewSet(viewsets.ViewSet):
         username = user.username
         order_model = OrderModel()
         try:
-            data = order_model.order_list(page, size, username=username)
+            data = order_model.order_list(username, page, size)
             return setResult(data)
         except Exception as e:
             logger.error("获取订单列表失败：{}".format(traceback.format_exc()))

@@ -143,6 +143,7 @@ CREATE TABLE `market_category`  (
 DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order`  (
   `id` bigint NOT NULL AUTO_INCREMENT,
+  `order_uuid` varchar(64) NOT NULL,
   `user_id` bigint NOT NULL,
   `amount` double NOT NULL,
   `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,

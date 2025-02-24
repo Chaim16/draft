@@ -7,7 +7,7 @@ from django.core.files.base import ContentFile
 from django.core.paginator import Paginator
 from django.forms import model_to_dict
 
-from draft.utils.constants_util import OrderStatus
+from draft.utils.constants_util import OrderStatus, Role
 from draft.utils.exception_util import BusinessException
 from draft.utils.log_util import get_logger
 from draft import settings
@@ -25,8 +25,10 @@ class OrderModel(object):
         user_id = user.id
 
         draft = Draft.objects.get(id=draft_id)
+        order_uuid = str(uuid.uuid4())
         params = {
             "user_id": user_id,
+            "order_uuid": order_uuid,
             "amount": draft.price,
             "status": OrderStatus.PENDING.value,
             "draft_id": draft_id,
@@ -36,31 +38,46 @@ class OrderModel(object):
         order = Order.objects.create(**params)
         return {"id": order.id}
 
-    def order_list(self, page, size, **kwargs):
+    def order_list(self, username, page, size, **kwargs):
+        user = User.objects.get(username=username)
+        role = user.role
+        user_id = user.id
+
         order_list = Order.objects.filter().order_by("-id")
         if kwargs.get("status"):
             order_list = order_list.filter(status=kwargs.get("status"))
         if kwargs.get("draft_id"):
             order_list = order_list.filter(draft_id=kwargs.get("draft_id"))
-        if kwargs.get("username"):
-            user = User.objects.get(username=kwargs.get("username"))
-            user_id = user.id
+        if role != Role.ADMINISTRATOR.value:
             order_list = order_list.filter(user_id=user_id)
         count = order_list.count()
         paginator = Paginator(order_list, size)
         order_list = paginator.get_page(page)
 
-        # 获取用户列表
+        # 获取用户信息
         res = UserModel().user_list(1, 9999)
         user_list = res.get("list", [])
         user_map = {}
         for user in user_list:
             user_map[str(user.get("id"))] = user.get("username")
 
+        # 获取画稿信息
+        res = DraftModel().draft_list(1, 9999)
+        draft_list = res.get("list", [])
+        draft_map = {}
+        for draft in draft_list:
+            draft_map[str(draft.get("id"))] = draft
+
         data_list = []
         for item in order_list:
             info = model_to_dict(item)
+
+            draft_id = info.get("draft_id")
+            draft_info = draft_map.get(str(draft_id))
+            info["draft_title"] = draft_info.get("title")
+
             info["buyer"] = user_map.get(str(info.get("user_id")))
+            info["designer"] = user_map.get(str(draft_info.get("designer_id")))
             data_list.append(info)
         return {"count": count, "list": data_list}
 
