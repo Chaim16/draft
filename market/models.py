@@ -63,6 +63,7 @@ class Draft(models.Model):
     id = models.BigAutoField(primary_key=True)
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=1024)
+    image_name = models.CharField(max_length=128)
     image_url = models.CharField(max_length=2048)
     price = models.FloatField()
     category_id = models.BigIntegerField()

@@ -4,11 +4,14 @@ import time
 import uuid
 
 from django.core.files.base import ContentFile
+from django.core.paginator import Paginator
+from django.forms import model_to_dict
 
 from draft.utils.exception_util import BusinessException
 from draft.utils.log_util import get_logger
 from draft import settings
 from market.models import User, Draft
+from market.service.user_model import UserModel
 
 logger = get_logger("draft")
 
@@ -42,4 +45,29 @@ class DraftModel(object):
         draft = Draft.objects.create(**params)
         logger.info("画稿已发布")
         return {"id": draft.id}
+
+    def draft_list(self, page, size, **kwargs):
+        draft_list = Draft.objects.filter().order_by("-id")
+        if kwargs.get("category_id"):
+            draft_list = draft_list.filter(category_id=kwargs.get("category_id"))
+        if kwargs.get("designer_id"):
+            draft_list = draft_list.filter(designer_id=kwargs.get("designer_id"))
+        count = draft_list.count()
+        paginator = Paginator(draft_list, size)
+        draft_list = paginator.get_page(page)
+
+        # 获取用户列表
+        res = UserModel().user_list(1, 9999)
+        user_list = res.get("list", [])
+        user_map = {}
+        for user in user_list:
+            user_map[str(user.get("id"))] = user.get("username")
+
+        data_list = []
+        for item in draft_list:
+            info = model_to_dict(item)
+            info["designer"] = user_map.get(str(item.designer_id), "")
+            data_list.append(info)
+        return {"count": count, "list": data_list}
+
 

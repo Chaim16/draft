@@ -54,3 +54,24 @@ class DraftViewSet(viewsets.ViewSet):
             logger.error("发布画稿失败：{}".format(traceback.format_exc()))
             raise BusinessException("发布画稿失败")
 
+    @action(methods=['GET'], detail=False)
+    @swagger_auto_schema(
+        operation_description="画稿列表",
+        tags=['画稿中心']
+    )
+    def draft_list(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = TransCoding().transcoding_dict(dict(request.GET.items()))
+        page = int(params.get('page', 1))
+        size = int(params.get('size', 10))
+        draft_model = DraftModel()
+        try:
+            data = draft_model.draft_list(page, size)
+            return setResult(data)
+        except Exception as e:
+            logger.error("获取画稿列表失败：{}".format(traceback.format_exc()))
+            raise BusinessException("获取画稿列表失败")
+
