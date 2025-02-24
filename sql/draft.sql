@@ -148,8 +148,8 @@ CREATE TABLE `order`  (
   `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `draft_id` bigint NOT NULL,
   `create_time` bigint NOT NULL,
-  `is_cancel` int NOT NULL,
-  `cancel_time` bigint NOT NULL,
+  `is_cancel` int,
+  `cancel_time` bigint,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 

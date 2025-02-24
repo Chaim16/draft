@@ -38,7 +38,6 @@ class WalletOrder(models.Model):
 class Order(models.Model):
 
     id = models.BigAutoField(primary_key=True)
-    order_uuid = models.CharField(max_length=36)
     user_id = models.BigIntegerField()
     amount = models.FloatField()
     status = models.CharField(max_length=20)

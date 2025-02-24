@@ -50,3 +50,8 @@ class PublishDraftSerializer(serializers.Serializer):
     price = serializers.FloatField(required=True)
     category_id = serializers.IntegerField(required=True)
 
+
+class CreateOrderSerializer(serializers.Serializer):
+
+    draft_id = serializers.IntegerField(required=True)
+

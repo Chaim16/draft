@@ -32,9 +32,6 @@ class DraftViewSet(viewsets.ViewSet):
             return setResult({}, "用户未登录", 1)
 
         params = request.POST
-        logger.info(request.FILES)
-        logger.info(type(request.FILES))
-
         image = request.FILES.get("image", "")
         title = params.get("title", "")
         description = params.get("description", "")

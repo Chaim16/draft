@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 发布画稿">
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 画稿中心联调">
+      <change afterPath="$PROJECT_DIR$/market/service/order_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/market/view/order_view.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/service/draft_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/draft_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/market/view/draft_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/draft_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/view/serilazer.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/view/serilazer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sql/draft.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/draft.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,26 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.draft.executor&quot;: &quot;Run&quot;,
-    &quot;Python.alipay_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.alipay_model_dev.executor&quot;: &quot;Run&quot;,
-    &quot;Python.crawler_util.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yqm02/PycharmProjects/draft/market/service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.draft.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "Python.alipay_model.executor": "Run",
+    "Python.alipay_model_dev.executor": "Run",
+    "Python.crawler_util.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "C:/Users/yqm02/PycharmProjects/draft/market/service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yqm02\PycharmProjects\draft\market\service" />
@@ -235,6 +240,8 @@
       <workItem from="1740280029844" duration="8995000" />
       <workItem from="1740305843326" duration="17142000" />
       <workItem from="1740363402614" duration="17848000" />
+      <workItem from="1740389242590" duration="304000" />
+      <workItem from="1740389556066" duration="4589000" />
     </task>
     <task id="LOCAL-00001" summary="feat: ignore文件调整">
       <option name="closed" value="true" />
@@ -348,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740386421360</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feat: 画稿中心联调">
+      <option name="closed" value="true" />
+      <created>1740389272199</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740389272199</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +381,8 @@
     <MESSAGE value="feat: 审批设计师" />
     <MESSAGE value="feat: 用户管理" />
     <MESSAGE value="feat: 发布画稿" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 发布画稿" />
+    <MESSAGE value="feat: 画稿中心联调" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 画稿中心联调" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/draft$crawler_util.coverage" NAME="crawler_util Coverage Results" MODIFIED="1740280059996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/draft/utils" />
