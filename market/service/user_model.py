@@ -10,7 +10,7 @@ from django.forms import model_to_dict
 from draft.utils.constants_util import Role, DesignerApplicationStatus, WalletOrderStatus
 from draft.utils.exception_util import BusinessException
 from draft.utils.log_util import get_logger
-from market.models import User, DesignerApplicationRecord, WalletOrder
+from market.models import User, DesignerApplicationRecord, WalletOrder, Order
 from market.service.alipay_model import AlipayModel
 
 logger = get_logger("user")
@@ -178,7 +178,13 @@ class UserModel(object):
         return {"count": count, "list": data_list}
 
     def del_user(self, username):
-        User.objects.filter(username=username).delete()
+        user = User.objects.get(username=username)
+        user_id = user.id
+        # 删除关联的设计师申请
+        DesignerApplicationRecord.objects.filter(user_id=user_id).delete()
+        # 删除关联的订单
+        Order.objects.filter(user_id=user_id).delete()
+        user.delete()
         logger.info("已删除用户：{}".format(username))
 
 
