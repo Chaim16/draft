@@ -36,6 +36,7 @@ class DraftModel(object):
             "title": title,
             "description": description,
             "image_url": image_url,
+            "image_name": new_image_name,
             "price": price,
             "category_id": category_id,
             "designer_id": user_id,

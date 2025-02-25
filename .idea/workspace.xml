@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="feat: 用户删除，订单删除">
+    <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="fix: 用户删除">
       <change afterPath="$PROJECT_DIR$/sql/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/service/user_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/user_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/market/service/draft_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/service/draft_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +238,7 @@
       <workItem from="1740363402614" duration="17848000" />
       <workItem from="1740389242590" duration="304000" />
       <workItem from="1740389556066" duration="12846000" />
-      <workItem from="1740447774187" duration="3374000" />
+      <workItem from="1740447774187" duration="5496000" />
     </task>
     <task id="LOCAL-00001" summary="feat: ignore文件调整">
       <option name="closed" value="true" />
@@ -400,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740449803626</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix: 用户删除">
+      <option name="closed" value="true" />
+      <created>1740452438922</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1740452438922</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +432,8 @@
     <MESSAGE value="feat: 订单管理" />
     <MESSAGE value="feat: 画稿搜索" />
     <MESSAGE value="feat: 用户删除，订单删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 用户删除，订单删除" />
+    <MESSAGE value="fix: 用户删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 用户删除" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/draft$crawler_util.coverage" NAME="crawler_util Coverage Results" MODIFIED="1740280059996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/draft/utils" />
