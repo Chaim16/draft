@@ -133,3 +133,12 @@ class OrderModel(object):
         # 修改订单状态为“待支付”
         order.status = OrderStatus.PENDING.value
         order.save()
+
+    def del_order(self, username, order_id):
+        order = Order.objects.get(id=order_id)
+        user = User.objects.get(username=username)
+        user_id = user.id
+        if order.user_id != user_id:
+            raise BusinessException("无权限删除该订单")
+        order.delete()
+

@@ -177,4 +177,8 @@ class UserModel(object):
             })
         return {"count": count, "list": data_list}
 
+    def del_user(self, username):
+        User.objects.filter(username=username).delete()
+        logger.info("已删除用户：{}".format(username))
+
 

@@ -55,3 +55,12 @@ class CreateOrderSerializer(serializers.Serializer):
 
     draft_id = serializers.IntegerField(required=True)
 
+
+class OrderDeleteSerializer(serializers.Serializer):
+
+    order_id = serializers.IntegerField(required=True)
+
+
+class UserDeleteSerializer(serializers.Serializer):
+
+    username = serializers.CharField(max_length=64, required=True)

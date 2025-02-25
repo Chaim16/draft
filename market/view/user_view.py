@@ -13,7 +13,7 @@ from draft.utils.validate import TransCoding
 from market.service.alipay_model import AlipayModel
 from market.service.user_model import UserModel
 from market.view.serilazer import RegisterSerializer, UserModifySerializer, ApplyAsDesignerSerializer, \
-    RechargeSerializer, ApproveDesignerApplicationSerializer
+    RechargeSerializer, ApproveDesignerApplicationSerializer, UserDeleteSerializer
 
 logger = get_logger("user")
 
@@ -247,4 +247,33 @@ class UserViewSet(viewsets.ViewSet):
         except Exception as e:
             logger.error("获取用户列表失败：{}".format(traceback.format_exc()))
             raise BusinessException("获取用户列表失败")
+
+    @action(methods=['POST'], detail=False)
+    @swagger_auto_schema(
+        operation_description="删除用户",
+        request_body=UserDeleteSerializer,
+        tags=['用户管理']
+    )
+    def del_user(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = json.loads(request.body)
+        user_model = UserModel()
+        try:
+            username = user.username
+            user_dict = user_model.detail(username)
+            if user_dict.get('role') != Role.ADMINISTRATOR.value:
+                raise BusinessException("权限不足")
+            username = params.get('username')
+            user_dict = user_model.detail(username)
+            if user_dict.get('role') == Role.ADMINISTRATOR.value:
+                raise BusinessException("不能删除管理员账号")
+
+            user_model.del_user(username)
+            return setResult()
+        except Exception as e:
+            logger.error("删除用户失败：{}".format(traceback.format_exc()))
+            raise BusinessException("删除用户失败")
 

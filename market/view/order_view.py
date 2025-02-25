@@ -10,7 +10,7 @@ from draft.utils.log_util import get_logger
 from draft.utils.response import setResult
 from draft.utils.validate import TransCoding
 from market.service.order_model import OrderModel
-from market.view.serilazer import CreateOrderSerializer
+from market.view.serilazer import CreateOrderSerializer, OrderDeleteSerializer
 
 logger = get_logger("home")
 
@@ -103,4 +103,26 @@ class OrderViewSet(viewsets.ViewSet):
         except Exception as e:
             logger.error("退回失败：{}".format(traceback.format_exc()))
             raise BusinessException("退回失败")
+
+    @action(methods=['POST'], detail=False)
+    @swagger_auto_schema(
+        operation_description="删除订单",
+        request_body=OrderDeleteSerializer,
+        tags=["订单管理"],
+    )
+    def del_order(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return setResult({}, "用户未登录", 1)
+
+        params = json.loads(request.body)
+        order_id = params.get("order_id", "")
+        username = user.username
+        order_model = OrderModel()
+        try:
+            order_model.del_order(username, order_id)
+            return setResult()
+        except Exception as e:
+            logger.error("删除订单失败：{}".format(traceback.format_exc()))
+            raise BusinessException("删除订单失败")
 
