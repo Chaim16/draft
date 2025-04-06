@@ -189,10 +189,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.draft" />
       <item itemvalue="Python.alipay_model" />
       <item itemvalue="Python.alipay_model_dev" />
       <item itemvalue="Python.crawler_util" />
+      <item itemvalue="Django Server.draft" />
     </list>
     <recent_temporary>
       <list>
