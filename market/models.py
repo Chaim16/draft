@@ -36,6 +36,7 @@ class WalletOrder(models.Model):
 
 
 class Order(models.Model):
+    """购买画稿订单表"""
 
     id = models.BigAutoField(primary_key=True)
     order_uuid = models.CharField(max_length=64)
