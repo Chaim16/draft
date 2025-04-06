@@ -6,7 +6,7 @@
 
 在线画稿交易平台是一个专用于画稿作品的电商交易网站
 
-后端地址：https://github.com/Chaim16/draft
+后端地址：https://github.com/Chaim16/draft    
 前端地址：https://github.com/Chaim16/draft-web
 
 ## 主要功能
