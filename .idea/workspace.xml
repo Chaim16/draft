@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="485185c0-1fa6-46d2-a7f0-aeaec4638d7e" name="Changes" comment="fix: 造数据">
+      <change afterPath="$PROJECT_DIR$/store/images/readme/alipay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/apply_designer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/architecture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/buy_draft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/confirm_pay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/designer_audit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/er.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/function.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/recharge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/refund.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/store/images/readme/register.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/market/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/market/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,29 +67,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.draft.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
-    &quot;Python.alipay_model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.alipay_model_dev.executor&quot;: &quot;Run&quot;,
-    &quot;Python.crawler_util.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/yqm02/PycharmProjects/AI_doc_platform&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.draft.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "Python.alipay_model.executor": "Run",
+    "Python.alipay_model_dev.executor": "Run",
+    "Python.crawler_util.executor": "Run",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/yqm02/PycharmProjects/AI_doc_platform",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yqm02\PycharmProjects\draft\store\images\designer" />
@@ -189,10 +201,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Django Server.draft" />
       <item itemvalue="Python.alipay_model" />
       <item itemvalue="Python.alipay_model_dev" />
       <item itemvalue="Python.crawler_util" />
-      <item itemvalue="Django Server.draft" />
     </list>
     <recent_temporary>
       <list>
